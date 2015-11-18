@@ -1,0 +1,42 @@
+/**
+ *@author Victoria Gillis
+ * (Non-functioning) Contact page
+ */
+<% include partials/header %>
+<body>
+    <% include partials/navbar %>
+    <br/>
+    <br/>
+   <h1> Contact Form</h1>
+<div class =content>
+<br/>
+
+<!--contact form-->
+
+  <form>
+  First name:<br>
+  <input type="text" name="firstname">
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname"><br>
+  Email: <br>
+  <input type= "text" name ="email">
+  <br>
+  Message: <br>
+  <input type= "textbox" name = "message"><br>
+  <br>
+  <input type = "button" name= "submit" value = "  SUBMIT  "><br>
+</form>
+    </div>
+    </body>
+    </html>
+<% include partials/footer %>
+   
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#contact').addClass("active");
+        });
+    </script>
+    
+</body>
+</html>

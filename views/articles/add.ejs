@@ -1,0 +1,27 @@
+<%- include ../partials/header.ejs %>
+<% include ../partials/navbar.ejs %>
+<main class="container">
+    <br/>
+    <br/>
+    <h1>Add a new Article</h1>
+
+    <form method="post">
+        <fieldset class="form-group">
+            <label for="name" class="col-sm-2">Name: *</label>
+             <input name="name" type="text" class="form-control" required autofocus/>
+            
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="email" class="col-sm-2">Email: *</label>
+           <input name="email" type="email" class="form-control" required />
+        </fieldset>
+         <fieldset class="form-group">
+            <label for="phone" class="col-sm-2">Phone Number: *</label>
+            <input name="phone" type="text" class="form-control" required />
+        </fieldset>
+        <button type="submit" class="col-sm-offset-2 btn btn-success">Submit</button>
+
+    </form>
+
+</main>
+<%include ../partials/footer.ejs %>

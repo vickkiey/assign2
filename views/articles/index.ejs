@@ -1,0 +1,67 @@
+<% include ../partials/header.ejs %>
+<% include ../partials/navbar.ejs %>
+</br>
+<br/>
+<main class="container">
+
+    <h1>Articles</h1>
+
+    <a href="/articles/add" title="Add Article">Add a new Article</a>
+
+  
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            
+        </div> <!-- panel-heading -->
+        <% if (articles.length > 0) { %>
+        <div class="panel-body table-responsive">
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th>Date Created</th>
+                        
+                        <th></th>
+                    </tr>
+                </thead>
+                </tbody>
+                <% for (var i = 0; i < articles.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= articles[i].name %>
+                    </td>
+                    <td>
+                        <%= articles[i].email %>
+                    </td>
+                    <td>
+                        <%= articles[i].phone %>
+                    </td>
+                    <td>
+                        <% var date = new Date(articles[i].created);
+                         var dateString = date.toDateString() + " " + date.toLocaleTimeString(); %>
+                        <%= dateString %>
+                    </td>
+                    
+                    <td>
+                        <a href="/articles/<%= articles[i]._id %>" title="Edit" class="btn btn-primary">
+                            <i class="fa fa-pencil-square-o"></i>
+                        </a>
+                        <a href="/articles/delete/<%= articles[i]._id %>" title="Delete" onclick="return confirm('Are you sure you want to delete this?');" class="btn btn-danger">
+                            <i class="fa fa-trash-o"></i>
+                        </a>
+                    </td>   
+                </tr>
+                <% } %>
+                </tbody>
+            </table>
+        </div> <!-- panel-body -->
+        <% } %>
+    </div><!-- panel panel-default -->
+
+</main>
+</main>
+</body>
+<% include ../partials/footer.ejs %>
