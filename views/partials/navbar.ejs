@@ -10,14 +10,40 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                  
+          
                 <li id="about"><a href="/about">About</a></li>
                 <li id ="projects"><a href ="/projects">Projects</a></li>
                 <li id ="services"><a href ="/services">Services</a></li>
-                <li id ="contact"><a href ="/contact">Contact</a></li>
-               
-              <li id = "address"><a href= "/login">Address</a></li>        
-              
+                <li id ="contact"><a href ="/contact">Contact Me</a></li>
+                <!-- <li id = "articles"><a href = "/login">Address Book</a></li> -->
+          
+            <li role="separator" class="divider"></li>
+          <% if (displayName) { %>
+            <% if(title == "Articles" ) { %>
+            <li class="active">
+              <% } else { %>
+            <li>
+              <% } %>
+              <a href="/articles">Contacts</a></li>
+            <li class="navbar-text">Hello,
+              <%= displayName %>
+            </li>
+            <li><a href="/logout">Logout</a></li>
+            <% } else { %>
+              <% if(title == "Register" ) { %>
+            <li class="active">
+            <% } else { %>
+            <li>
+            <% } %>
+                <a href="/register">Register</a></li>
+              <% if(title == "Login" ) { %>
+            <li class="active">
+            <% } else { %>
+            <li>
+            <% } %>
+                <a href="/login">Login</a></li>
+              <% } %>
+       
             </ul>
         </div>
        

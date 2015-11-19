@@ -18,7 +18,10 @@ router.get('/', function(req, res, next) {
             // no error, we found a list of articles
             res.render('articles', {
                 title: 'Articles',
-                articles: articles
+                articles: articles, 
+            displayName: req.user ? req.user.displayName : '' 
+                
+       
             });
         }
     });
@@ -27,7 +30,8 @@ router.get('/', function(req, res, next) {
 // GET add page - show the blank form
 router.get('/add', function(req, res, next) {
     res.render('articles/add', {
-        title: 'Add a Contact'
+        title: 'Add a Contact', 
+            displayName: req.user ? req.user.displayName : ''
     });
 });
 
@@ -64,7 +68,8 @@ router.get('/:id', function(req, res, next) {
             //show the edit view
             res.render('articles/edit', {
                 title: 'Article Details',
-                article: article
+                article: article, 
+            displayName: req.user ? req.user.displayName : ''
             });
         }
     });
